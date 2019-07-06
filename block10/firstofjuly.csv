@@ -1,0 +1,11 @@
+date,city,temperature,humidity,wind,overcast,precipitation
+01.07.2019,Engels,20,60,13,clear,no
+01.07.2019,Saratov,21,70,10,clear,no
+01.07.2019,Novgorod,18,40,10,partly cloudy,no
+01.07.2019,Volgograd,27,70,5,clear,no
+01.07.2019,Ekaterinburg,-1,50,8,clear,no
+01.07.2019,Samara,19,100,12,cloudy,yes
+01.07.2019,Ryazan,31,65,4,clear,no
+01.07.2019,Kazan,25,70,9,clear,no
+01.07.2019,Vladivostok,17,100,10,cloudy,yes
+01.07.2019,Perm,-5,80,5,partly cloudy,no
