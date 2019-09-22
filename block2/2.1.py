@@ -11,6 +11,6 @@ if x > 0 or x < -23:
 elif y > 0 or y < x:
     print("No")
 elif y == x or x == -23 or y == 0:
-    print("Bourder")
+    print("Border")
 else:
     print("Yes")

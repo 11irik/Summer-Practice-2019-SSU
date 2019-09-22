@@ -1,6 +1,6 @@
-import sys
-sys.stdin = open('input.txt', 'r')
-sys.stdout = open('output.txt', 'w')
+# import sys
+# sys.stdin = open('input.txt', 'r')
+# sys.stdout = open('output.txt', 'w')
 
 
 def removeMultiples(ls, k):
@@ -10,9 +10,6 @@ def removeMultiples(ls, k):
             ls.pop(i)
         else:
             i += 1
-
-
-
 
 l = list(map(int, input().split()))
 removeMultiples(l, min(l))

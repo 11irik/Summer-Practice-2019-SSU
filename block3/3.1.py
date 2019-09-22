@@ -8,12 +8,10 @@ a = int(input())
 
 sum = 0
 factor = 1
-x = 4
-
+k = 1
 while sum < a:
-    sum += x
-    x *= fa
-
-
-print(sum)
+    k += 3
+    factor *= k
+    sum += factor
+print(sum - factor)
 

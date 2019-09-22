@@ -2,9 +2,6 @@ from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
-
 x = np.linspace(-3, 3)
 y = np.linspace(-3, 3)
 x, y = np.meshgrid(x, y)

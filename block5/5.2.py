@@ -4,16 +4,14 @@
 
 #5.3
 
-n, m = map(int, input('Enter n x m ').split())
+n, m = map(int, input().split())
 
 a = []
 
 for i in range(n):
     temp = []
     while len(temp) != m:
-        print(i + 1, end = ' ')
-        print('line')
-        temp = list(map(int, input('Enter m elements ').split()))
+        temp = list(map(int, input().split()))
     a.append(temp)
 
 print(*a, sep = '\n')
@@ -22,9 +20,7 @@ mv = a[0][0]
 for i in range(n):
     if max(a[i]) > mv:
         mv = max(a[i])
-
 for i in range(n):
     for j in range(m):
         a[i][j] /= mv
-
 print(*a, sep = '\n')

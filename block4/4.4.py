@@ -3,13 +3,11 @@
 # sys.stdout = open('output.txt', 'w')
 
 s1 = input().split()
-s2 = input()
-
-
+s2 = input().split()
 for word in s1[::-1]:
     if word in s2:
         print(word)
-    break
+        break
 
-# hello world, welcome to the city of sins
-# my name was given to me for my sins. That's sad
+# I am a newcomer and that is not bad
+# The newcomer was promising

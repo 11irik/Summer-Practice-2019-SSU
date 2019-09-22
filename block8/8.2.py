@@ -6,7 +6,7 @@ sys.stdout = open('output.txt', 'w')
 n, m = map(int, (input().split()))
 l, k = map(int, (input().split()))
 
-arr = a = np.random.randint(3, size=n*m).reshape(n,m)
+arr = np.random.randint(3, size=n*m).reshape(n,m)
 print(arr)
 
 uf, df = np.split(arr, [l,])
