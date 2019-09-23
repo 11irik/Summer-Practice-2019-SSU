@@ -1,13 +1,10 @@
-import sys
-import csv
 import matplotlib as plt
 import pandas as pd
-
 
 fdf = pd.read_csv('firstofjuly.csv', sep = ',')
 sdf = pd.read_csv('secondofjuly.csv', sep = ',')
 
-df = pd.concat([fdf, sdf]).reset_index(drop = True) #Drop???
+df = pd.concat([fdf, sdf]).reset_index(drop = True)
 
 count = 0
 # for index, row in df.iterrows():
@@ -44,8 +41,8 @@ colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
 explode = (0.1, 0, 0, 0)  # explode 1st slice
 
 # Plot
-plt.pie(sizes, explode=explode, labels=labels, colors=colors,
-autopct='%1.1f%%', shadow=True, startangle=140)
+cake = plt.subplots()
+cake.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
 
 plt.axis('equal')
 plt.show()
