@@ -1,4 +1,5 @@
 import matplotlib as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 
 fdf = pd.read_csv('firstofjuly.csv', sep = ',')
@@ -7,9 +8,6 @@ sdf = pd.read_csv('secondofjuly.csv', sep = ',')
 df = pd.concat([fdf, sdf]).reset_index(drop = True)
 
 count = 0
-# for index, row in df.iterrows():
-#     if row['precipitation'] == 'yes':
-#         count += 1
 
 length1 = int(len(df)/2)
 length2 = int(len(df) - length1)
@@ -20,32 +18,35 @@ for i in range (length1):
 
 print(count / len(df) * 100)
 
-
-count1 = 1
-count2 = 2
-count3 = 3
-count4 = 4
-
-metersPersecond = 10
-# for i in range(length1):
-#     if (df['overcast'][i] == 'clear') or (df['overcast'][i+length1] == 'clear'):
-#         if df['wind'][i] >= 10 or df['wind'][i+length1] >= 10:
-#             count2 += 1
-#         elif df['wind'][i] > 10 or df['wind'][i+length1] > 10:
-#             count1 += 1
-#     elif (df['overcast'][i] == 'clear') or (df['overcast'][i+length1] == 'clear'):
+df1 = df.loc[(df["overcast"] != 'clear') & (df["wind"] >= 10)]
+df2 = df.loc[(df["overcast"] != 'clear') & (df["wind"] > 10)]
+df3 = df.loc[(df["overcast"] != 'clear') & (df["wind"] >= 10)]
+df4 = df.loc[(df["overcast"] != 'clear') & (df["wind"] > 10)]
+sizes = [df1.size, df2.size, df3.size, df4.size]
 
 labels = 'Python', 'C++', 'Ruby', 'Java'
 sizes = [215, 130, 245, 210]
 colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
 explode = (0.1, 0, 0, 0)  # explode 1st slice
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-# Plot
-cake = plt.subplots()
-cake.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
-
-plt.axis('equal')
 plt.show()
+
+# df.groupby('overcast')
+# labels = 'Python', 'C++', 'Ruby', 'Java'
+# sizes = [215, 130, 245, 210]
+# colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+# explode = (0.1, 0, 0, 0)  # explode 1st slice
+#
+# # Plot
+#
+# plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
+#
+# plt.axis('equal')
+# plt.show()
 
 
 i = 0
