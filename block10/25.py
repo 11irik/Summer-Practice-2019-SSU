@@ -16,11 +16,6 @@ for i in range (length):
 print('Task 1: ', count / len(df) * 100, '%')
 
 
-count1 = 1
-count2 = 2
-count3 = 3
-count4 = 4
-
 df1 = df.loc[(df["overcast"] == 'clear') & (df["wind"] >= 10)]
 df2 = df.loc[(df["overcast"] == 'clear') & (df["wind"] > 10)]
 df3 = df.loc[(df["overcast"] != 'clear') & (df["wind"] >= 10)]
