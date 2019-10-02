@@ -2,17 +2,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-
-# df = pd.read_csv('FinalBase.csv', sep=';',  low_memory=False)
-# df.fillna(0, inplace=True)
-# df = df.drop(df[df['Schengen State'] == 0].index)
-# df = df.drop(df.columns[0], axis=1)
-# df = df.sample(frac = 1)
-
+# Task 1
 df = pd.read_csv('drop.csv')
+df = df.drop(df.columns[0], axis=1)
+df = df.drop(df.columns[19], axis=1)
 
-#df.to_csv('drop.csv')
+
+print('Task 1:')
+print(df)
 
 column = 'Uniform visas applied for'
 
@@ -59,9 +56,9 @@ generateChart('Finland')
 print('Task 7:')
 groups = []
 names = []
-for key, groupdf in df.groupby('Schengen State'):
+for country, groupdf in df.groupby('Schengen State'):
      groups.append(groupdf)
-     names.append(key)
+     names.append(country)
 
 groups[4] = groups[4].sort_values(by=['Uniform visas applied for', 'Consulate'])
 groups[6] = groups[6].sort_values(by=['Total ATVs and uniform visas not issued', 'Country where consulate is located'])
